@@ -29,6 +29,7 @@ pip install windows-curses
 
 ## To play
 * Use arrow keys to move the snake
+* <ESCAPE> to quit
 * Target to eat the food (black on green)
 * 4 lives to start with
 * Score is updated everytime food is eaten. increase in score is 5 * speed * length of snake

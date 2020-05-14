@@ -2,7 +2,7 @@
 Game of  snake implemented using object oriented programming in Python
 
 ## Keywords
-Snake, game, python3, Object oriented programming
+Snake, game, python3, Object oriented programming, curses, text
 
 ## Getting started
 This game is built using Python3 and will run on any platform. Use the steps below to get started - 

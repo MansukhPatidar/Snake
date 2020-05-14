@@ -15,8 +15,15 @@ You will need following to run
 
 ### Installing prerequisites
 You can use pip3 module to install the required modules for the game - 
+#### mac
 ```
 sudo pip3 install playsound
+sudo pip3 install curses
+```
+#### windows
+```
+pip install playsound
+pip install windows-curses
 ```
 
 

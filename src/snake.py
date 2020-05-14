@@ -241,7 +241,8 @@ class SnakeGame:
         self.screen.get_handle().addstr(1, self.screen.play_area.width()//2-len(msg)//2,
                                         msg, curses.color_pair(3))
         msg = r' Lives: %s    Speed: %2d    Score: %d    Time: %02d:%02d ' % (
-            '!' * self.lives, self.speed, self.score, self.elapsed_time/60, self.elapsed_time % 60)
+            chr(182) * self.lives, self.speed, self.score,
+            self.elapsed_time/60, self.elapsed_time % 60)
 
         self.screen.get_handle().addstr(3, self.screen.play_area.width()//2-len(msg)//2,
                                         msg, curses.color_pair(1))

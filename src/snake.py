@@ -190,8 +190,8 @@ class GameScreen:
 
     def reset_screen(self):
         self.handle.nodelay(0)
-        self.handle.addstr((self.play_area.y_1 + self.play_area.height()) //
-                           2, self.play_area.width()//2-5, 'GAME OVER', curses.A_BLINK)
+        self.handle.addstr(self.play_area.y_1 + self.play_area.height() //
+                           2, self.play_area.width() // 2 - 5, 'GAME OVER', curses.A_BLINK)
         self.refresh()
 
     def refresh(self):

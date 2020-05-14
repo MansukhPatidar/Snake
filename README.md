@@ -17,3 +17,4 @@ To play
 * Uses sound clips on eat, die and game over events
 
 Screenshot
+![Alt text](/screenshots/s1.png "Screenshot of the game")

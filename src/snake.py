@@ -1,3 +1,7 @@
+"""
+Game of snake implemented using object oriented programming
+"""
+
 import curses
 from curses.textpad import rectangle
 import time
@@ -87,6 +91,14 @@ class Snake():
         self.move(direction, True)
 
     def move(self, direction, should_grow=False):
+        """Function to move the snake by one position in the direction
+
+        Arguments:
+            direction {DIRECTION} -- [current direction of snake's movement]
+
+        Keyword Arguments:
+            should_grow {bool} -- [should grow the snake as moving? used when food is eaten] (default: {False})
+        """
         tail = head = SnakePart(self.get_head().position)
 
         if not should_grow:
@@ -248,6 +260,9 @@ class SnakeGame:
                                         msg, curses.color_pair(1))
 
     def draw_game(self):
+        """
+        Routine to display the game objects on the screen
+        """
         self.screen.clear()
         self.screen.draw_playarea()
         self.draw_console()
@@ -257,6 +272,9 @@ class SnakeGame:
         self.screen.refresh()
 
     def check_food(self):
+        """
+        Checks if the snake head is on food location and trigger grow
+        """
         if self.snake.check_food(self.food):
             playsound('eat.mp3', False)
             self.snake.grow(self.direction)
@@ -264,6 +282,12 @@ class SnakeGame:
             self.place_food()
 
     def process_input(self):
+        """
+        Get user input from keyboard and apply it to change the state of game
+
+        Returns:
+            bool -- returns False if the use pressed escape and game should quit
+        """
         key = self.screen.check_input()
 
         if key != -1:
@@ -287,6 +311,9 @@ class SnakeGame:
         return True
 
     def game_over(self):
+        """
+        process and display the game over state
+        """
         self.draw_game()
         self.screen.reset_screen()
         self.food.erase(self.screen.get_handle())
@@ -295,6 +322,12 @@ class SnakeGame:
         self.screen.check_input()
 
     def check_death(self):
+        """
+        Check and change state if the snake has collided with either self or game borders
+
+        Returns:
+            bool -- True if it is game over, else False
+        """
         if self.snake.check_bite(self.screen.play_area):
             self.reset_round()
             self.lives -= 1
@@ -306,6 +339,9 @@ class SnakeGame:
         return False
 
     def play(self):
+        """
+        main game loop
+        """
         while True:
             self.elapsed_time = time.time() - self.start_time
 
